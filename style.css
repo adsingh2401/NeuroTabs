@@ -1,0 +1,112 @@
+/* General body styling */
+body {
+    font-family: "Roboto", "Arial", sans-serif;
+    margin: 0;
+    padding: 20px;
+    max-width: 900px;
+    max-height: 600px;
+    width: 100%;
+    height: auto;
+    overflow-y: auto;
+    background-color: #fff;
+    color: #202124;
+}
+
+/* Group container styling */
+#group-container {
+    width: 100%;
+    max-width: 100%;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    padding: 10px;
+}
+
+/* Header styling */
+h1 {
+    font-size: 24px;
+    color: #1a73e8;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Group card styling */
+.group {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 15px;
+    margin-bottom: 15px;
+    background-color: #fdfdfd;
+    transition: box-shadow 0.2s ease;
+}
+
+.group:hover {
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Collapsible title styling */
+.group-title {
+    font-size: 18px;
+    color: #1a73e8;
+    cursor: pointer;
+    margin: 0;
+}
+
+/* Summary styling */
+.summary {
+    display: none;
+    margin-top: 10px;
+    font-size: 15px;
+    color: #5f6368;
+    line-height: 1.6;
+}
+
+.summary ul {
+    margin: 10px 0;
+    padding-left: 25px;
+    list-style-type: disc;
+    color: #5f6368;
+}
+
+.summary ul li {
+    margin-bottom: 8px;
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+/* Button styling */
+button {
+    display: block;
+    width: calc(100% - 20px);
+    padding: 12px;
+    background-color: #4285f4;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    text-align: center;
+    cursor: pointer;
+    font-size: 16px;
+    margin-bottom: 10px;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+}
+
+button:hover {
+    background-color: #3367d6;
+    transform: scale(1.02);
+}
+
+/* Responsive adjustments */
+@media (max-width: 800px) {
+    body {
+        width: 100%;
+        height: auto;
+        padding: 10px;
+    }
+    button {
+        font-size: 14px;
+        padding: 8px;
+    }
+    h1 {
+        font-size: 20px;
+        margin-bottom: 15px;
+    }
+}

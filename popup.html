@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NeuroTabs</title>
+  <style>
+    body {
+      font-family: "Roboto", "Arial", sans-serif;
+      margin: 0;
+      padding: 20px;
+      width: 400px;
+      height: 100vh;
+      overflow-y: auto;
+      background-color: #fff;
+      color: #202124;
+    }
+
+    h1 {
+      font-size: 28px;
+      font-weight: bold;
+      color: #1a73e8;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+
+    #heading-icon {
+      width: 40px;
+      height: 40px;
+      margin-right: 10px;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-around;
+      margin-bottom: 20px;
+    }
+
+    nav button {
+      padding: 15px 20px;
+      font-size: 16px;
+      font-weight: bold;
+      border: none;
+      border-radius: 8px;
+      background-color: #4285f4;
+      color: white;
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+
+    nav button.active {
+      background-color: #3367d6;
+    }
+
+    nav button:hover {
+      transform: scale(1.1);
+      background-color: #2b5dab;
+    }
+
+    section {
+      display: none;
+    }
+
+    section.active {
+      display: block;
+    }
+
+    #output, #page-summary, #group-summary {
+      margin-top: 20px;
+      padding: 15px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      background-color: #f9f9f9;
+      font-size: 14px;
+      line-height: 1.6;
+      white-space: pre-wrap;
+      height: 150px;
+      overflow-y: auto;
+    }
+
+    textarea {
+      width: 100%;
+      margin-top: 10px;
+      height: 50px;
+      font-size: 14px;
+      padding: 4px; /* Add padding for better spacing */
+      border: 1px solid #ddd; /* Define a subtle border */
+      border-radius: 8px; /* Round the edges */
+      box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle shadow */
+      resize: none; /* Disable resize for consistency */
+    }
+
+    /* Large buttons for Summarizer and Prompter */
+    nav button {
+      font-size: 16px; /* Bigger font size */
+      padding: 12px 12px; /* Larger padding for bigger buttons */
+    }
+
+    /* Consistent styling for all buttons */
+    button {
+      display: block;
+      margin: 10px 0;
+      padding: 12px;
+      font-size: 14px;
+      font-weight: bold;
+      border: none;
+      border-radius: 8px;
+      background-color: #4285f4;
+      color: white;
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+
+    button:hover {
+      background-color: #3367d6;
+      transform: scale(1.05);
+    }
+
+    /* Spacing adjustment for "Summarize Group" */
+    #group-summarize-btn {
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <h1>
+    <img src="web.png" alt="Icon" id="heading-icon"> NeuroTabs
+  </h1>
+  <nav>
+    <button id="summarizer-tab" class="active">Summarizer</button>
+    <button id="prompter-tab">Prompter</button>
+  </nav>
+  <section id="summarizer-section" class="active">
+    <button id="page-summarize-btn">Summarize Page</button>
+    <div id="page-summary">Click "Summarize Page" to fetch a summary of the current page.</div>
+    <button id="group-summarize-btn">Summarize Group</button>
+    <div id="group-summary">Click "Summarize Group" to fetch a summary of the current tab group.</div>
+  </section>
+  <section id="prompter-section">
+    <textarea id="prompter-input" placeholder="Ask a question about the tab or group..."></textarea>
+    <button id="page-prompt-btn">Ask About Page</button>
+    <button id="group-prompt-btn">Ask About Group</button>
+    <div id="output">Your responses will appear here.</div>
+  </section>
+  <script type="module" src="script.js"></script>
+</body>
+</html>
